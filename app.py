@@ -2,6 +2,8 @@ from pathlib import Path
 # import pyperclip
 import streamlit as st
 from PIL import Image
+import os
+current_directory = os.path.dirname(__file__)
 
 
 # --- PATH SETTINGS ---
@@ -140,12 +142,14 @@ st.subheader("Projects & Accomplishments")
 st.write("---")
 c1,c2,c3=st.columns((1,2,1))
 i = 0
+img_1 = os.path.join(current_directory, 'assets', 'image1_resized.png')
+img_2 = os.path.join(current_directory, 'assets', 'Screenshot 2024-05-02 140830.png')
 for project, link in PROJECTS.items():
     if i == 0:
         c1,c2=st.columns((1,1))
         c1.write(f"[{project}]({link})")
-        c1.image('assets\\image1_resized.png', width=330)
+        c1.image(img_1, width=330)
         i+=1
     elif i == 1:
         c2.write(f"[{project}]({link})")
-        c2.image('assets\Screenshot 2024-05-02 140830.png', width=330)
+        c2.image(img_2, width=330)
