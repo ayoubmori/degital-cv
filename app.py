@@ -144,7 +144,7 @@ for project, link in PROJECTS.items():
     if i == 0:
         c1,c2=st.columns((1,1))
         c1.write(f"[{project}]({link})")
-        c1.image('assets\image1_resized.png', width=330)
+        c1.image('assets\\image1_resized.png', width=330)
         i+=1
     elif i == 1:
         c2.write(f"[{project}]({link})")
