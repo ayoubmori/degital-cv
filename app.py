@@ -18,7 +18,7 @@ PAGE_TITLE = "Digital CV | Ayoub Taouabi"
 PAGE_ICON = ":wave:"
 NAME = "Ayoub Taouabi"
 DESCRIPTION = """
-Data science student looking for an end-of-study internship.
+Junior Data Scientist | Dedicated to harnessing data for impactful insights and innovation 📊
 """
 EMAIL = "ayoubtaouabi6@gmail.com"
 SOCIAL_MEDIA = {
@@ -124,16 +124,28 @@ st.subheader("Experience & Work History")
 st.write("---")
 
 # --- JOB 1
-st.write("🚧", "**Internship Data Analyst | Office Chérifien des Phosphates (OCP) **")
+st.caption("Internship")
+st.write("🚧", "**Software Developer | Lumnex** ")
+st.write("04/2024 - present - 4 mo")
+st.write(
+    """
+- ► Developed a REST API for Gateway Control
+- ► Advanced Control Systems
+- ► Generated a simulation on Raspberry Pi
+"""
+)
+
+st.caption("Internship")
+st.write("🚧", "**Data Analyst | Office Chérifien des Phosphates (OCP)** ")
 st.write("07/2023 - 1 mo")
 st.write(
     """
 - ► Organisasion et analyse des données
 - ► Détection des motifs et des anomalies dans les données 
-- ► Used PowerBI and SQL to redeﬁne and track KPIs surrounding marketing initiatives, and supplied recommendations to boost landing page conversion rate by 38%
-- ► Redesigned data model through iterations that improved predictions by 12%
+- ► Used PowerBI and SQL to redeﬁne and track KPIs surrounding marketing initiatives
 """
 )
+
 
 
 # --- Projects & Accomplishments ---
@@ -143,7 +155,7 @@ st.write("---")
 c1,c2,c3=st.columns((1,2,1))
 i = 0
 img_1 = os.path.join(current_directory, 'assets', 'image1_resized.png')
-img_2 = os.path.join(current_directory, 'assets', 'Screenshot 2024-05-02 140830.png')
+img_2 = os.path.join(current_directory, 'assets', 'myscore.png')
 for project, link in PROJECTS.items():
     if i == 0:
         c1,c2=st.columns((1,1))
