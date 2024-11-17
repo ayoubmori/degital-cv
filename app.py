@@ -190,7 +190,7 @@ st.write("---")
 
 
 # Show in webpage
-local_css(r"C:\Users\hp\Desktop\analyse\digital-CV\styles\styles.css")
+local_css("styles/styles.css")
 
 
 st.html(f"""
