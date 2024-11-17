@@ -205,15 +205,15 @@ st.html(f"""
         </div>
 
         <div class="project">
-            <span>Data Analysis Dashboard</span>
-            <h4>Frontend app : Coffee Shop</h4>
+            <span>Fornt-End App</span>
+            <h4>Frontend app- Coffee Shop</h4>
             <a href="https://github.com/ayoubmori/coffee-shop-site" target="_blank">
                 <img src="data:image/gif;base64,{into_img(assets_dir / 'coffe-site.jpg')}" alt="Data Analysis Dashboard">
             </a>
         </div>
 
         <div class="project">
-            <span>Dashboard Sales</span>
+            <span>Data Analysis Dashboard</span>
             <h4>Power Bi Dashboard - Coffee Shop Sales</h4>
             <a href="https://github.com/ayoubmori/coffee_shop_dashboard_sales" target="_blank">
                 <img src="data:image/gif;base64,{into_img(assets_dir / 'coffe-shop-sales.png')}" alt="IoT Solution">
