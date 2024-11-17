@@ -3,6 +3,9 @@ from pathlib import Path
 import streamlit as st
 from PIL import Image
 import os
+import streamlit.components.v1 as components
+import base64
+
 current_directory = os.path.dirname(__file__)
 
 
@@ -30,9 +33,22 @@ PROJECTS = {
     "🏆 Sales Dashboard - Comparing sales across three stores": "https://www.linkedin.com/in/ayoub-taouabi/",
     "🏆 Football Performance Analysis – analyze team and player performance ": "https://my-score.onrender.com/",
 }
-
-
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
+
+
+
+def intoImg(PATH):
+    file_ = open(PATH, "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+    current_directory = os.path.dirname(__file__)
+    return data_url
+
+def local_css(file_name):
+    with open(file_name) as f:
+        css_content = f.read()
+        st.markdown(f'''<style>{css_content}</style>''', unsafe_allow_html=True)
 
 
 # --- LOAD CSS, PDF & PROFIL PIC ---
@@ -154,16 +170,71 @@ st.write(
 st.write('\n')
 st.subheader("Projects & Accomplishments")
 st.write("---")
-c1,c2,c3=st.columns((1,2,1))
-i = 0
-img_1 = os.path.join(current_directory, 'assets', 'image1_resized.png')
-img_2 = os.path.join(current_directory, 'assets', 'myscore.png')
-for project, link in PROJECTS.items():
-    if i == 0:
-        c1,c2=st.columns((1,1))
-        c1.write(f"[{project}]({link})")
-        c1.image(img_1, width=330)
-        i+=1
-    elif i == 1:
-        c2.write(f"[{project}]({link})")
-        c2.image(img_2, width=330)
+# c1,c2,c3=st.columns((1,2,1))
+# i = 0
+# img_1 = os.path.join(current_directory, 'assets', 'image1_resized.png')
+# img_2 = os.path.join(current_directory, 'assets', 'myscore.png')
+# for project, link in PROJECTS.items():
+#     if i == 0:
+#         c1,c2=st.columns((1,1))
+#         c1.write(f"[{project}]({link})")
+#         c1.image(img_1, width=330)
+#         i+=1
+#     elif i == 1:
+#         c2.write(f"[{project}]({link})")
+#         c2.image(img_2, width=330)
+
+
+
+
+# Show in webpage
+local_css(r"C:\Users\hp\Desktop\analyse\digital-CV\styles\styles.css")
+
+
+st.html(f"""
+<body>
+    <main class="portfolio">
+        <div class="project">
+            <span>Web App</span>
+            <h4>My score - Football Analysis Application</h4>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7209570700792115200/" target="_blank">
+                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\my-score.png")}" alt="Web App">
+            </a>
+        </div>
+
+        <div class="project">
+            <span>Data Analysis Dashboard</span>
+            <h4>Frontend app : Coffee Shop</h4>
+            <a href="https://github.com/ayoubmori/coffee-shop-site" target="_blank">
+                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\coffe-site.jpg")}" alt="Data Analysis Dashboard">
+            </a>
+        </div>
+
+        <div class="project">
+            <span>Dashboard Sales</span>
+            <h4>Power Bi Dashboard - Coffee Shop Sales</h4>
+            <a href="https://github.com/ayoubmori/coffee_shop_dashboard_sales" target="_blank">
+                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\coffe-shop-sales.png")}" alt="IoT Solution">
+            </a>
+        </div>
+
+        <div class="project">
+            <span>Forecast Api App</span>
+            <h4>Weather Forecast App</h4>
+            <a href="https://github.com/ayoubmori/weather-app" target="_blank">
+                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\forcast-app.png")}" alt="Machine Learning Model">
+            </a>
+        </div>
+
+        <div class="project">
+            <span>Machine Learning Model</span>
+            <h4>Predict Weather model</h4>
+            <a href="https://github.com/ayoubmori/predect-weather---mini-projet" target="_blank">
+                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\predict_weather_model.jpg")}" alt="Mobile App">
+            </a>
+        </div>
+    </main>
+</body>
+</html>
+
+        """)
