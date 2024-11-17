@@ -36,19 +36,21 @@ PROJECTS = {
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 
+current_dir = Path(__file__).parent
+styles_file = current_dir / "styles" / "styles.css"
+assets_dir = current_dir / "assets" / "imgs"
 
-def intoImg(PATH):
-    file_ = open(PATH, "rb")
-    contents = file_.read()
-    data_url = base64.b64encode(contents).decode("utf-8")
-    file_.close()
-    current_directory = os.path.dirname(__file__)
-    return data_url
+# --- Helper Function ---
+def into_img(path):
+    """Convert an image to a base64-encoded string."""
+    with open(path, "rb") as file_:
+        contents = file_.read()
+    return base64.b64encode(contents).decode("utf-8")
 
-def local_css(file_name):
-    with open(file_name) as f:
-        css_content = f.read()
-        st.markdown(f'''<style>{css_content}</style>''', unsafe_allow_html=True)
+def local_css(file_path):
+    """Load a local CSS file."""
+    with open(file_path) as css_file:
+        st.markdown(f"<style>{css_file.read()}</style>", unsafe_allow_html=True)
 
 
 # --- LOAD CSS, PDF & PROFIL PIC ---
@@ -198,7 +200,7 @@ st.html(f"""
             <span>Web App</span>
             <h4>My score - Football Analysis Application</h4>
             <a href="https://www.linkedin.com/feed/update/urn:li:activity:7209570700792115200/" target="_blank">
-                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\my-score.png")}" alt="Web App">
+                <img src="data:image/gif;base64,{into_img(assets_dir / 'my-score.png')}" alt="Web App">
             </a>
         </div>
 
@@ -206,7 +208,7 @@ st.html(f"""
             <span>Data Analysis Dashboard</span>
             <h4>Frontend app : Coffee Shop</h4>
             <a href="https://github.com/ayoubmori/coffee-shop-site" target="_blank">
-                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\coffe-site.jpg")}" alt="Data Analysis Dashboard">
+                <img src="data:image/gif;base64,{into_img(assets_dir / 'coffe-site.jpg')}" alt="Data Analysis Dashboard">
             </a>
         </div>
 
@@ -214,7 +216,7 @@ st.html(f"""
             <span>Dashboard Sales</span>
             <h4>Power Bi Dashboard - Coffee Shop Sales</h4>
             <a href="https://github.com/ayoubmori/coffee_shop_dashboard_sales" target="_blank">
-                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\coffe-shop-sales.png")}" alt="IoT Solution">
+                <img src="data:image/gif;base64,{into_img(assets_dir / 'coffe-shop-sales.png')}" alt="IoT Solution">
             </a>
         </div>
 
@@ -222,7 +224,7 @@ st.html(f"""
             <span>Forecast Api App</span>
             <h4>Weather Forecast App</h4>
             <a href="https://github.com/ayoubmori/weather-app" target="_blank">
-                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\forcast-app.png")}" alt="Machine Learning Model">
+                <img src="data:image/gif;base64,{into_img(assets_dir / 'forcast-app.png')}" alt="Machine Learning Model">
             </a>
         </div>
 
@@ -230,7 +232,7 @@ st.html(f"""
             <span>Machine Learning Model</span>
             <h4>Predict Weather model</h4>
             <a href="https://github.com/ayoubmori/predect-weather---mini-projet" target="_blank">
-                <img src="data:image/gif;base64,{intoImg(r"C:\Users\hp\Desktop\analyse\digital-CV\assets\imgs\predict_weather_model.jpg")}" alt="Mobile App">
+                <img src="data:image/gif;base64,{into_img(assets_dir / 'predict_weather_model.jpg')}" alt="Mobile App">
             </a>
         </div>
     </main>
