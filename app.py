@@ -14,8 +14,8 @@ current_directory = os.path.dirname(__file__)
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-resume_file = current_dir / "assets" / "CV.pdf"
-profile_pic = current_dir / "assets" / "profile-pic.png"
+resume_file = current_dir / "assets" / "AYOUB_TAOUABI_CV.pdf"
+profile_pic = current_dir / "assets" / "picofme.png"
 
 
 # --- GENERAL SETTINGS ---
@@ -97,11 +97,14 @@ for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
 # EDUCATION
 st.write('\n')
 st.subheader("EDUCATION")
-col1,col2=st.columns(2)
-col1.write("🎓 ECOLE SUPERIEURE DE TECHNOLOGIE")
-col2.caption("DUT en Informatique Décisionnelle et Statistiques")
-col1.write("🎓 LYCEE ABOU ELKACEM ZAYANI")
-col2.caption("Baccalauréat en sciences physique 2020-2021")
+
+st.write("🎓 Bachelor of Excellence in DataAnalytics and Artificial Intelligence")
+col1,col2=st.columns([0.3,10])
+col2.caption("University Ibn Zohr - Agadir | 2024 – Present")
+
+st.write("🎓 University Diploma of Technology inDecision Support and Statistics")
+col1,col2=st.columns([0.3,10])
+col2.caption("École Supérieure de Technologie FBS | 2022 - 2024")
 
 # --- EXPERIENCE & QUALIFICATIONS ---
 st.write('\n')
@@ -146,7 +149,7 @@ st.write("---")
 # --- JOB 1
 st.caption("Internship")
 st.write("🚧", "**Software Developer | Lumnex** ")
-st.write("04/2024 - present - 4 mo")
+st.write("04/2024 - 07/2024 - 4 months")
 st.write(
     """
 - ► Developed a REST API for Gateway Control
@@ -157,7 +160,7 @@ st.write(
 
 st.caption("Internship")
 st.write("🚧", "**Data Analyst | Office Chérifien des Phosphates (OCP)** ")
-st.write("07/2023 - 1 mo")
+st.write("07/2023 - 1 month")
 st.write(
     """
 - ► Organisasion et analyse des données
@@ -201,6 +204,14 @@ st.html(f"""
             <h4>My score - Football Analysis Application</h4>
             <a href="https://www.linkedin.com/feed/update/urn:li:activity:7209570700792115200/" target="_blank">
                 <img src="data:image/gif;base64,{into_img(assets_dir / 'my-score.png')}" alt="Web App">
+            </a>
+        </div>
+
+        <div class="project">
+            <span>TMDB Api Project</span>
+            <h4>Movie & TV Show Explorer with TMDB"</h4>
+            <a href="https://github.com/ayoubmori/Movies-App" target="_blank">
+                <img src="data:image/gif;base64,{into_img(assets_dir / 'movie_app_demo.png')}" alt="Mobile App">
             </a>
         </div>
 
