@@ -23,7 +23,7 @@ PAGE_TITLE = "Digital CV | Ayoub Taouabi"
 PAGE_ICON = ":wave:"
 NAME = "Ayoub Taouabi"
 DESCRIPTION = """
-Junior Data Scientist | Dedicated to harnessing data for impactful insights and innovation 📊
+Junior Data Analyst | Dedicated to harnessing data for impactful insights and innovation 📊
 """
 EMAIL = "ayoubtaouabi6@gmail.com"
 SOCIAL_MEDIA = {
