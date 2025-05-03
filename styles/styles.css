@@ -10,7 +10,7 @@ body {
 /* Portfolio layout */
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* exactly 2 items per row */
     gap: 20px;
     padding: 10px;
 }
@@ -32,13 +32,24 @@ body {
 
 /* Project title */
 .project span {
-    font-size: 1.7rem;
+    font-size: 1.2rem; /* reduced from 1.7rem */
     color: #ebebeb;
     margin: 10px 0;
 }
-.project h4{
-    font-size: medium;
+
+.project h4 {
+    font-size: 0.9rem; /* reduced from medium */
 }
+
+/* Link styles */
+.project a {
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem; /* reduced from 1rem */
+    color: #0056b3;
+}
+
 
 /* Project image */
 .project img {
